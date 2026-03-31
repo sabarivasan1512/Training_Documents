@@ -290,3 +290,156 @@ Next :::
 			- Lab Requirement
 		
 	
+
+
+	
+#########################
+Day - 2 | 31st Mar. 2026
+#########################		
+		
+	
+			- Continuous Delivery & Deployment with Examples:
+			
+			- Continuous Monitoring
+			
+		- DevOps Workflow : CI/CD => CI/Cd , CI/CD
+		
+		- Continuous Delivery :::
+		
+			Eg.: Core Banking Application / Insurance Application 
+			
+				Online Banking Service
+
+					SMS -> Production Release :
+					
+					Open the Production Release window : 
+					
+						4hr - 6hrs (non-business hours)
+						
+					v1.0 ==> v2.0	-> fix / revert
+					
+					
+		- Continuous Deployment :::		
+		
+			Eg.: Netflix / Facebook / www.amazon.com
+			
+			
+			www.amazon.com :::
+			
+			Sign-Up				-> Micro-Service1 -> Developer1 - Code, Test, Release the changes to Prod v1.1 ==> v1.2
+			Sign-In				-> Micro-Service2 -> Developer2 - Code, Test, Release the changes to Prod 
+			Search 
+			Add to Cart 
+			Place the order
+			Payment
+			Confirm Order 
+			Track
+			
+		
+		- Continuous Monitoring ::::
+		
+			- Used to ensure business Continuity 
+			
+			- The Application and the Infra-Structure is highly avaiable.
+			
+			Infra-Structure Monitoring :::
+			
+				CPU		--> Level --> Threshold Limit -> 80% -> Alarm -> Webhook triggers
+					
+				Memory	--> Level --> Threshold Limit -> 75% -> Alarm -> Webhook triggers
+				
+				Network Traffic --> Level --> Threshold Limit -> 80% -> Alarm -> Webhook triggers -> Auto-Scaling Groups / LB
+				
+			
+				Tools: 	Prometheus/Grafana,Splunk,Dynatrace,Nagios
+						Jenkins Jobs, Ansible 					
+		
+			Application Monitoring :::
+			
+				- AppDynamics/DataDog ==> Performance Testing 
+			
+		
+		- Infra-Structure Management :::
+		
+			- Provision/Create the Resources --> 50 Test Server
+			
+			- Configure the Resources		 --> Install and configure the Tool
+			
+			
+			IAC Tools - Infra-Structure As Code 
+			
+				IAC Tools :    Declarative Scripts ==> Tasks are defined using key:value pairs (json/yaml)
+					
+					- Terraform/Cloudformation/ARM/ ==> Provision/Create the Resources 
+					
+					- Ansible/Chef/Puppet 			==> Configure the Resources
+					
+					- Jenkins 
+					
+					Jenkins / Bamboo / gitlab-ci / azure-pipelines / AWS CodePipelines / github-actions
+					
+					
+		- DevOps Workflow / LifeCycle :::
+		
+			CI/CD ::
+			
+			1. Developer Create the Source Code & commit to github repository
+			
+			
+			2. DevOps Team Create CICD Pipeline 
+			
+				- SCM_Checkout(Download Source Code) to build environment
+				- Build 
+				- Create Application Package 
+				- Unit Test the Application Package 
+				- Promote the Package to Test Environment
+				- Test the Package (QA/UAT)
+				- Promote the Package to Prod Environment
+				- Prod Test 
+				- Monitoring
+				- Collect the feedback
+				
+				
+		- DevOps is all about :
+
+	
+		-	DevOps is Software Development Strategy/Process, which help to promote collaboration between the teams like Development Team and Operations Team to achieve Continuous Development, Continuous Integration, Continuous Testing, Continuous Delivery, Continuous Deployment and Continuous Monitoring in more automated fashion.		
+		
+			- People 
+			
+			- Process 
+			
+			- Tools 
+				
+				
+				With this training highlight 2+ yrs Exp. DevOps Resource -> 0 to 1.5 yrs
+				
+		- DevOps Team : 
+		
+			- DevOps Associate 
+			- DevOps Lead 
+			- DevOps Architect
+			- DevOps Consultant
+			
+			- DevSecOps
+			
+			- SRE 
+			
+			- GitOps 
+			
+			- MLOPs 
+			
+			- AIOPs 
+			
+			- LLMOps
+			
+			- ITOps
+						
+						
+		- Continuous Improvement ==>>>>>>>>>>
+		
+		
+
+Next :::
+	
+		Fundamentals of Linux :::
