@@ -1,0 +1,682 @@
+		
+#########################
+Day - 3 | 2nd Apr. 2026
+#########################	
+		
+		Environments :
+		
+			Non-Production												Production Environment
+
+				- Dev Environment
+				
+				- Build Environment
+				
+				- Test 
+					QA Environment
+					
+					UAT Environment			------------------>				Production Servers
+
+
+
+		Tools :::
+
+			- Open-Source DevOps 
+				- git/github/jenkins/docker/kubernetes/ansible/terraform/prometheus/grafana
+				
+			- Managed Services 
+				- AWS 	- CodeBuild/CodeDeploy/CodePipelines
+				- Azure - Azure DevOps Services 
+				- GCP  	- Devops Services 
+
+		- DevOps Architect/Consultant:
+			- Detailed DevOps Assessment
+		
+	Fundamentals of Linux :::	
+
+	-> Linux on Devops Perspective :::
+	
+		Overview of Linux
+		Linux Architecture
+		Linux Distributions
+		Basic Linux Commands
+		File Permission Management
+		User Creation
+		Shell Scripts
+		SSH(Remote Server Access) and VI Utility		
+	
+	Working with Linux :
+
+	Lab Pre-requisites ::::
+		
+		- Install Linux ::
+		
+			Avail AWS Free-Tier Account :::
+				https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-creating.html
+	
+	Steps: 
+		
+		- Create Github Account 
+		
+		- Create AWS Free Tier Account 
+		
+		- Login to AWS Console using root email_id 
+		
+		- Create EC2 Instances - Linux Virtual Machines(VM)
+	
+		- How to Connect to EC2 Instances :
+		
+			- EC2 Instance Connect Option 
+			
+			- Mac/Linux User -- Use the Terminal to SSH Connect 
+			
+			- Window User -- SSH Agents 
+				- MobaXTerm: 
+				
+				
+	Overview  of Linux :
+	
+	Fundamentals of Operating System :
+	
+		- Windows/Linux/Mac
+		
+	What is an Operating System?
+		- It is an Interface between the user Application and the underlying Hardware.
+		
+	Why Linux?
+		- Open-Source 
+		- Is Secured 
+		- Linux OS was created based on the Unix Operating System 
+		- Is an interface between the user applications and underlying Hardware.
+		- Linux OS is based on the Command User Interface
+		- Core of Linux OS is called kernel!
+			Components of Linux OS Architecture
+				- Networking 
+				- Storage 
+				- IPC - Inter Process Communication
+				- User Management 
+				- Security Management 
+				- Control Groups 
+				- Namespace 
+				- Process 
+
+	On DevOps Perspective :
+	
+		- Package(Software Application) Management 
+		- File Management
+		- User Management
+		- Access Management 
+		- Remote Serve Management 
+		- Linux Scripts - Process Automation 
+		
+		
+	- Login to AWS Console :
+		- Dashboard :
+		
+		- Monitor the Billing - Free Tier usage
+		
+		- AWS Region 
+		
+		- AWS Service Catalog 
+			
+		- Create EC2 Linux Instance :
+		
+			- Create Linux Instance :::::
+			
+				Goto EC2 Service Dashboard 
+				
+				- Choose Launch Instance 
+				
+					-> Name 
+					-> AMI ::
+						-> Linux based AMI 
+						
+							Type of Linux Distributions :
+							
+								- Centos/RHEL	
+								- Debian/Ubuntu	**** Default
+									- Choose Ubuntu 22.04v(Stable Version) AMI. to Launch an Instance
+								- Fedora 
+								- Amazon Linux
+							
+								
+						
+					-> Instance Type 
+						t3.micro (Free Tier)
+						
+						
+					-> Key Pair 
+					
+					
+					1 VM = 750 Hrs/Month for free. 
+					
+					10 VMs = 75 Hrs/Month for free 
+				
+						
+		- Connect to Linux Instance ::::
+
+		- How to Connect to EC2 Instances :
+		
+			- EC2 Instance Connect Option 	--> Thru web browser
+			
+			- Mac/Linux User 				--> Use the Terminal to SSH Connect 
+			
+			- Window User 					--> SSH Agents 
+				- MobaXTerm: 
+				
+					-> Host Name :
+					
+						<Public_IP_Address>
+					
+					-> User Name 
+						<ubuntu>
+						
+					-> Credential :
+						<key-pair - private_key - *.pem>
+				
+				- Putty:
+				
+
+Next :
+
+	- Package Management ::::::	
+			
+				
+				
+				
+#########################
+Day - 4 | 3rd Apr. 2026
+#########################
+		
+	Working with Linux ::
+
+
+		1. Create EC2 Instances (Virtual Machine)
+				
+				- Login to AWS Console 
+				- Go to EC2 Instance Dashboard 
+				- Launch EC2 Instances.
+				
+					- Parameters to Launch AWS EC2 Instances :
+						- Name/Tag
+						- Choose Ubuntu v22.04 AMI 
+						- t2.micro Instance Type 
+						- Key-Pair 
+						- No. Of Resource  = 1
+						
+		2. Connect to EC2 Instances (Virtual Machine)
+		
+			Perform SSH(Secure SHell) Connection to EC2 Instance :
+			
+				=> Host_Name 										# Public_IP_Address of EC2 Instance
+				=> User_Name 										# ubuntu for Ubuntu Machine
+				=> User Credentials	(Authentication Type)
+						- Key Based Authentication
+							- SSH Keys: Private Keys & Public Keys
+		
+			- EC2 instance Connect Option thru Web Browser
+			
+			- SSH Agents (In Windows Machine) 
+				- Putty/MobaXterm				Windows Users Install this in Local Machine
+					==> https://mobaxterm.mobatek.net/download-home-edition.html
+		
+			- Terminal ::
+				- Command Prompt / Mac Terminal
+				Eg.: 
+						Open Command Prompt / Mac Terminal
+
+						Locate your private key file. The key used to launch this instance is aws2025-keypair1.pem
+
+						Run this command, if necessary, to ensure your key is not publicly viewable.
+						chmod 400 "aws2025-keypair1.pem"
+
+						Connect to your instance using its Public DNS:
+						ec2-65-0-183-132.ap-south-1.compute.amazonaws.com
+
+						Example:
+
+						ssh -i "aws2025-keypair1.pem" ubuntu@ec2-65-0-183-132.ap-south-1.compute.amazonaws.com		
+				
+		3. Login to EC2 Instances (Virtual Machine)		
+		
+		
+	Linux Commands :::
+	
+	- It is based on the Linu Distributions :
+	
+	- Package Management :
+	
+		- Packages are applications/software that are running on Linux Machines.
+		
+		- Package Manager: is used to Install/Uninstall/Update the Package.
+		
+			- On Linux OS :
+			
+				The Linux Packages managers are based on the Linux Distributions
+				
+				
+				yum 			==> Centos/RHEL Distributions
+				
+				apt/apt-get 	==> Debian/Ubuntu Distributions
+				
+				dnf 			==> Fedora Distributions
+				
+				dnf 			==> Amazon Linux(Latest Version)
+				
+				yum 			==> Amazon Linux(Previous Version)
+				
+				
+		- On Linux Machines, Package Managers are executed only as a root(admin) user.
+		
+			
+			Login to Linux Machine as a ubuntu user & elevate the access to root user.
+			
+				$ sudo -i 		# Elevate the Access to root user 
+				
+				$ exit 
+				
+				
+		Linux Commands :
+		
+			clear 				# Clear the Screen
+
+			$ sudo -i 			# Elevate the Access to root user 
+			
+			$ exit 
+				
+			apt update -y		# Update the Default packages
+			
+			apt install git -y 
+			
+			apt remove git -y 
+			
+			apt upgrade git -y 
+			
+		How to Install the Packages - Best Practise ?
+
+			- Type of Package ?
+			
+				-> Stand-alone Application Package 
+						
+						- git 
+				
+				-> Service Package 
+				
+						- Web Application Server - tomcat/nginx/httpd 
+						
+							tomcat 			=> 8080
+							nginx/httpd  	=> 80 
+							jenkins			=> 8080
+							
+							Access the Service Package use: <public_ip_address>:<port_number>
+							
+							As a best practise always refer to the officical documentation of the tools
+						
+						
+			- Installation Process :				Eg.: 	To Install Tomcat
+			
+				- Install the Pre-requisites 				Install Java
+			
+				- Install Actual Package 					Install Tomcat 
+				
+				- Post Installation Activities				Start/Stop Tomcat Service 
+		
+		- Install Stand-alone Package :::
+			
+			Eg.: To Install Git on Linux Machine : https://git-scm.com/install/
+			
+				$ apt install git -y 
+				
+				$ git --version 			# To verify the installed version
+				
+				apt remove git -y 			# To Uninstall 
+				
+				apt upgrade git -y 			# To Upgrade
+				
+		- Install Service Package :::
+		
+				apt install nginx -y 
+				
+				apt install docker.io -y 
+				
+				
+				Sample: Install git,docker,jenkins,kubernetes,ansible,terraform,prometheus/grafana
+				
+				
+				Jenkins: 
+				
+					- Jenkins Server 
+					- Docker 
+					- Tomcat 
+			
+			- Linux Application Service(nginx/Jenkins) 		
+			
+				- Start / Stop / Enable / Status / restart / disable
+				
+				systemctl status nginx 
+				
+				systemctl start nginx
+				
+				systemctl stop nginx
+				
+				systemctl enable nginx		# Used to define the service as as start up service
+		
+				systemctl disable nginx		# Used to remove the service from the start-up task list
+				
+				systemctl restart nginx 		
+			
+		
+		- which git 	# to the installation path
+		
+		
+
+- Linux	: File Management :::
+
+			Navigate to Directories/Folders :::
+
+				- pwd				# Get the Present Working Directory
+
+				- cd				# Change Directory
+				
+				- cd <dir_name> 	# Change to a specific directory				
+				
+				- cd /				# This command will take to the System root directory			
+			
+				- cd ~				# This command will take to the home directory(Default Directory) of the specific linux user
+									Eg.: 	ubuntu 	===> /home/ubuntu 
+		
+											root	===> /root
+									
+				- cd .. 			# Back to previous directory
+	
+				- ls 				# Is to List the files and Directories 
+				
+				- ls -a 			# Is to List all the files and Directories(Including the hidden components) 	
+
+				- ll				# Long List 
+				
+				
+	- File Operations :
+	
+		Create/Open/Read/Edit/Delete/Update/Copy/Rename
+		
+		touch file1.txt							# To Create an empty file
+		
+		echo "Hello Everyone!" 					# To print a message to the terminal 
+		
+		echo "Hello Everyone!" >> file1.txt 	# To Create/Add More records to a file 
+		
+		echo "Hello Everyone!" >  file1.txt 	# To Remove all the existing records and Create a records to a file
+		
+		cat file1.txt 							# Read the File content 
+		
+		mv file1.txt tempfile.txt 				# To Rename a file / Directory
+		
+		mv dir1 dir2 							# To Rename a file / Directory
+		
+		cp tempfile1 dir1 						# To Copy a file to a target directory
+		
+		mv file1.txt targetdir1					# To Move a file to a target directory
+						
+
+		
+#########################
+Day - 5 | 6th Apr. 2026
+#########################
+
+
+	- File Management :::
+	
+		touch .file.txt 
+		
+		mkdir .dir1 
+		
+	Copy :
+
+		cp <source_file_name> <Target_Directory>
+		
+		cp tempfile1 dir1 						# To Copy a file to a target directory
+		
+	Move: 
+	
+		mv <source_file_name> <Target_Directory>	
+		
+		mv file1.txt targetdir1					# To Move a file to a target directory
+
+	Type of files ???
+	
+		- Program/Script						# Eg.: index.html / sample.sh / userdb.java
+												# It should have execute/run access 			
+		
+		- Text/Documentation					# db_procedure.md / proc_steps 
+		
+		- Artifacts 							# *.exec / *.war / *.jar	--> Created by the build tools
+		
+	
+	- Access Management  :::
+	
+		User Level Access 
+		
+			- Owner 
+			
+			- Public 
+		
+		Group Level Access 
+		
+			- Linux User -> ubuntu				--> ubuntu user group 
+							devops_admin 		--> Admin_group user group 
+							ansible_admin 		--> Admin_group user group 
+							developer1...100	--> Developer_Group 
+							tester1				--> Testing_Group
+
+
+		$ ll 
+		
+		drwxrwxr-x 2 ubuntu ubuntu 4096 Apr  6 02:06 dir1/
+		-rw-rw-r-- 1 ubuntu ubuntu   10 Apr  6 02:16 file1.txt
+		
+		-rwxrwxr-x 1 ubuntu ubuntu   10 Apr  6 02:16 sample.sh
+		
+		----------
+		
+		-									# Denote dir or file (Possible value:  d or - )
+												'd'  Denotes Directory
+												'-'  Denotes File 	
+
+		 ---								# Denote the Owner Level Access 
+												Possible Values: r / w / x 
+												r - Read only Access 
+												w - Write Access 
+												x - Execute Access 
+		
+			---								# Denote the Group Level Access
+												Possible Values: r / w / x 
+												r - Read only Access 
+												w - Write Access 
+												x - Execute Access
+
+			   ---							# Denote the Public User Level Access
+												Possible Values: r / w / x 
+												r - Read only Access 
+												w - Write Access 
+												x - Execute Access			
+	
+
+	
+	CHMOD :::
+	
+		- Change the Access Mode :
+		
+		
+			Syntax: 	chmod <Access_Level> <File/Directory>
+			
+			Access Mode Values 
+			
+		https://chmod-calculator.com/
+	
+		chmod <Access_Level> <File/Directory_Name>
+		
+		chmod 600 s1.txt
+
+		chmod 600 dir1
+		
+		As a best practise chmod 777 should not be used at any cause!			
+		
+		
+		chmod 775 sample_script1.sh
+		
+		Secret file - User Credentials / Secret Keys  # Use chmod 600 dir1
+	
+	
+		Install Docker Service Package 
+		
+			docker user_id 
+		
+			docker user_group
+	
+	
+		as a ubuntu user, how to access docker server? 
+		
+			- Add ubuntu user to docker user group 		
+
+		root root 		
+		
+		systemadmin1 - Add systemadmin1 user to root user group
+		
+		
+	Linux Machine : - This server can be accessible by many teams  - RBAC
+	
+		-> user1 
+		
+		-> user2 
+		
+		-> devopsadmin	to gain full access to Jenkins,docker,kubernetes 
+
+		-> ubuntu user id 	--> Login 
+		
+		-> root user id 	--> Administrate Linux Server 
+		
+		-> Jenkins,docker,kubernetes 
+		
+		
+		
+		
+	- User & Access Management  :::::
+	
+		SSH Connection to the Linux Machine :
+		
+			Parameters needed to enable SSH Connection:
+			
+				- Host_Name
+				
+				- User_Name 
+				
+				- Credential 
+				
+					- Authentication Type:
+					
+						- Password Based Authentication
+						
+						- Token Based Authentication 
+						
+						- SSH Key Based Authentication - More Secured 
+						
+							- Public Key 	--> saved within the server in the form of authorized_keys
+							
+							- Private Key 	--> downloaded to the user device *.pem 
+							
+							- authorized_keys 
+							
+						- Passwordless Authentication
+		
+	
+		- Create Linux User :::
+		
+			- User_Name 
+			
+			- Bash Terminal Access 
+
+			- Home Directory
+			
+			- Password
+
+			- SSH keys
+			
+		- Create Linux User with SSH Keys :::
+		
+			sudo -i 
+			
+			useradd devopsadmin -s /bin/bash -m -d /home/devopsadmin
+
+			su - devopsadmin			==> Login to that user 
+			
+		- Create Password to any Linux User:
+		
+			As a root user ::
+			
+				passwd <user_name>
+				
+				passwd devopsadmin		
+				
+			
+		- Get the List of Linux Users ::::
+			cat /etc/passwd
+			
+		
+		- Get the list of Linux User Groups :::: 
+			cat /etc/group
+			
+			
+		- Add user to a Group :
+		
+			usermod -aG <Existing_Group_Name> <Existing_User_Name>
+			
+			usermod -aG docker devopsadmin			
+			
+		
+		- Create SSH keys ::::
+
+		Create Linux User with SSH Keys :::
+		
+			sudo -i 
+			
+			useradd devopsadmin -s /bin/bash -m -d /home/devopsadmin
+
+			su - devopsadmin
+
+			ssh-keygen -t ecdsa -b 521					#ubuntu 22.04 or higher version of ubuntu				
+
+			cd .ssh
+			
+			ls ~/.ssh 
+
+			#You should see following two files:
+
+			#id_ecdsa - private key
+			#id_ecdsa.pub - public
+			
+			
+			cat id_ecdsa.pub > authorized_keys			# authorized_keys this file name should be same.			
+			
+	
+			chmod 600 authorized_keys
+			
+			chmod 600 id_ecdsa.pub
+			
+		Change the Ownership of any dir/file :::		
+			
+			chown -R devopsadmin /opt/web_app_dir1/		# Used to Change the Ownership of Files or Directories	
+			
+			chown -R devopsadmin:devopsadmin /opt/web_app_dir1/		# Used to Change the Ownership of Files or Directories	
+
+
+			Tomcat Service: --> Web Application Service 
+			
+			chown -R devopsadmin /opt/tomcat/		# Used to Change the Ownership of Files or Directories
+			chown -R devopsadmin:devopsadmin /opt/tomcat/		# Used to Change the Ownership of Files or Directories
+
+		
+Next ::::
+	
+	- Remote Server Management 
+	
+	- Fundamentals of SHELL Scripting
