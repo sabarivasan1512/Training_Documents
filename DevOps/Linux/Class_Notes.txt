@@ -680,3 +680,243 @@ Next ::::
 	- Remote Server Management 
 	
 	- Fundamentals of SHELL Scripting
+
+
+
+#########################
+Day - 6 | 7th Apr. 2026
+#########################
+
+	- Remote Server Management ::::
+	
+		- Jenkins,Ansible,Kubernetes,Terraform,Prometheus/Grafana
+		
+		client - Server Architecture ::
+		
+			1Server : Clients(1,2,3,4,5,)
+			
+			CI / CD 
+			
+		Environments :
+		
+			Dev 
+			
+			Build 	==>	compile & create artifacts --> *_v1.war 
+			
+			Target :
+			
+				QA 	- *_v1.war 
+				
+				UAT - *_v1.war 
+				
+				Production - *_v1.war 
+	
+		
+Use Case :
+
+		1. Establish Connection to Remote Server  
+		2. Login to the Remote Server 
+		3. Copy the Files from one server to another server
+			using SCP
+		4. Manage the Remote Server - Install any package/Uninstall/Upgrade 
+		
+		
+		Pre-requisites for Remote Server :::
+		
+			- Launch 2 VMs (VM1-Source & VM2-Target)
+			
+			- Ensure that Port 22 is enabled 
+			
+			- Create User in both the VMs 
+			
+			- Create SSH-Key in one server(VM1)
+					ssh-keygen -t ecdsa -b 521
+					
+			- Use the public_Key as a authorized_keys in the target server(VM2)
+			
+			- Establish SSH Connection & Login to VM2(Target_Machine)
+			
+			- Copy Files from VM1 to VM2(Target_Machine)	
+			
+			
+			
+		1. Share the public_key to the target machine as a authorized_keys (Ansible Module)
+	
+		2. Share the private_key to the target machine (Jenkins Module)
+	
+	
+	
+		Server1 --> 
+		
+			-> Authentication : Tells who can access the Server 	
+			
+			-> Authorization : Tells what can be done on that Server
+	
+
+
+Source Machine :::
+
+		Create Linux User with SSH Keys :::
+		
+			sudo -i 
+			
+			useradd devopsadmin -s /bin/bash -m -d /home/devopsadmin
+
+			su - devopsadmin
+
+			ssh-keygen -t ecdsa -b 521					
+			
+			cd .ssh
+			
+			ls ~/.ssh 
+
+			#You should see following two files:
+
+			#id_ecdsa - private key
+			#id_ecdsa.pub - public
+			
+
+			
+Client_Machine ::::
+
+		- Create User :::
+			
+				useradd adminuser1 -s /bin/bash -m -d /home/adminuser1
+
+				su - adminuser1					
+
+			- Use the public_Key as a authorized_keys in the target server(VM2) :::
+
+				mkdir .ssh 
+
+				cd .ssh 
+
+
+				vi authorized_keys
+
+				#paste the id_ecdsa.pub of devopsadmin user from Server machine to authorized_keys file in Client Machine 
+
+				chmod 600 /home/adminuser1/.ssh/*
+
+
+		- Establish SSH Connection & Login to VM2(Target_Machine)
+
+				ssh adminuser1@172.31.34.44		# Using Private IP Address
+							
+		- Copy Files from VM1 to VM2(Target_Machine)
+		
+
+			#cp  /home/devopsadmin/sourcefile.txt home/devopsadmin/dir1/
+	
+			 scp /home/devopsadmin/sourcefile.txt adminuser1@172.31.34.44:/home/adminuser1
+	
+	
+	
+	
+	- Fundamentals of SHELL Scripting ::::
+	
+	
+	Shell Scripts to Implement DevOps Process Automation/Solutions :::
+	
+		- Automate the Infra-Structure Configurations
+		
+		- Automate the Application Deployments 
+		
+		- Automate the Remote Server Management :
+					- Security Patches 
+					- Upgrade
+
+		- Automate the Application Data Back-up & Restore 
+		
+		
+	
+	Groovy/Python/YAML Scripts ===> Declarative Scripts --> Key:value pair -->> Easy to write and maintain.
+	
+	Shell Scripts -> difficult to maintain.
+	
+	
+	Package Management ::::		Install/Uninstall/Update
+	
+		- Create Shell Script file :
+		
+			- *.sh 
+			
+			
+		- Install a package :::
+		
+			installgit.sh 				--> 
+			
+				sudo apt update -y 
+				
+				sudo apt install git -y 
+				
+				sudo apt install nginx -y 
+				
+				sudo apt install docker.io -y 
+				
+				sudo apt install maven -y 
+				
+				
+			
+		
+		- Use vi editor to create/edit the files.
+	
+			- File Editors :
+			
+				- vi editor					# To Create/Open a file in interactive mode				
+				
+				Eg.: 
+				
+					vi <file_name>			# To Create/Open a file in interactive mode
+					
+					
+					vi sample.txt
+					
+					press :
+					
+						i 					# go to insert mode 	
+
+						# Enter the file contents
+						# Enter the file contents
+						# Enter the file contents
+						# Enter the file contents
+					
+						esc :wq				# Save and exit from file 
+						
+						esc :q!				# exit from file without saving the changes
+						
+						
+
+	How to create shell scripts ????
+	
+		script file :
+		
+			*.sh 
+			
+		*.sh should have execute access 
+		
+		chmod 755 *.sh		
+		
+		./script1.sh						# Execute shell script!
+		
+		Eg.: 
+		
+		vi sample_script1.sh
+			
+			#!/bin/bash
+			#
+			echo "Hello World"
+			echo "Hello Everyone"
+			
+		chmod 755 sample_script1.sh
+		
+		./sample_script1.sh						# Execute shell script!
+		
+		
+Next::
+
+	Concepts related to Linux Shell Scripts 
+	
+	Demo Shell Scripts
+	
+	GIT Version Control System :::
