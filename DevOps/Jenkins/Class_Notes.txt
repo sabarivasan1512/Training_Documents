@@ -1,0 +1,146 @@
+
+
+
+##########################
+Day - 13 | 20th Apr. 2026
+##########################			
+		
+		
+	- Build Orchestration using Jenkins :
+	
+	Introduction to Jenkins ::::
+	
+	What is Jenkins :::
+	
+		Jenkins is Open-Source Build Orchestration Tool.
+		Used to Automate the End-to-End Application Build and Deployments
+		Using Jenkins we can create CI/CD Pipelines 
+		Perform Process Automation
+		
+	Jenkins Architecture ::
+	
+		Jenkins is based on Master-Slave Architecture :::
+		
+			Jenkins_Master (VM)				==> Install Jenkins - To Create Jenkins CI/CD Pipeline Jobs/Projects
+				
+				Jenkins_SlaveNode1 (VM)		==> Perform Application Builds - compile/create artifacts
+					(Build Environment)
+		
+	
+	
+	Alternative to Jenkins :
+	
+		- github-actions
+		- gitlab-ci 
+		- azure-pipelines
+		- bamboo 
+		- aws code-pipelines
+		
+	Scenario1 :	Application Build and Release frequency is very less.
+	
+		Jenkins_Master (VM) 	
+				==> Create Jenkins CI/CD Pipeline Projects & Execute the Build in same Jenkins_Master Node.		
+		
+		
+		
+	Scenario2 : Muliple Applications with high Build and Release frequencies.
+		
+		Jenkins_Master (VM)			
+				==> To Create Jenkins CI/CD Pipeline Projects and schedule to the builds in the slave_nodes
+																
+			Jenkins_SlaveNode1 (VM)	==> Perform Application Builds - Java Applications 
+			Jenkins_SlaveNode2 (VM)	==> Perform Application Builds - .Net Applications			
+			Jenkins_SlaveNode3 (VM)	==> Perform Application Builds - Python Applications 
+			Jenkins_SlaveNode4 (VM)	==> Perform Application Builds - Angular/NodeJS
+			Jenkins_SlaveNode5 (VM)	==> Perform Application Builds - Ruby 		
+
+
+	- Jenkins Pipelines/Jobs/Projects Workflow :
+		
+				- Application Build 
+					==> Process of Compiling the Source Code, 
+						Create the Artifacts(Executable code - Binaries - *.war/*.jar/*.exec/*.dll) 
+				- Unit Test 
+				- Promote the Changes to Test Environments
+				- Notify the Testing Team thru Emails	
+				
+	CI/CD Workflow :::
+	
+		SCM_Checkout 
+		Application Build 
+		Unit Testing 
+		Create Artifacts
+		Promote the Application to Test Environments
+		Notify 
+		Deploy to Prod 	
+		
+		
+	- Developers' Perspectives :
+	
+		- Developers are just the consumers of Jenkins using Jenkins Tools and Services.
+		- Developers use Jenkins to execute/cancel/view the output - workspace of the Jenkins projects/Pipelines/Jobs.
+		
+	- DevOps Perspectives:
+		
+		- DevOps Team is the owner of Jenkins.		
+		
+		- Roles & Responsibilities of DevOps Team/Resources :
+		
+		- Jenkins Administration :
+		
+			- Installation & Configuration of Jenkins 
+			- Jenkins Global System Configuration 
+			- Plugins Management 
+			- Tools Management 
+			- User Management
+			- Security Management 
+			- Credentials Management 
+			- Create the Jenkins Master & Slave Node Configurations 
+			- Create CICD Pipeline Projects to automate the Applications build  and deployments
+			- Onboard Applications to DevOps Practice
+			- Periodic Backup & Recovery
+			- Periodic Upgrade of Jenkins Services and Plugins 
+			- Troubleshoot any Jenkins related Issues
+			
+			
+	Implementations :
+	
+		- Installation & Configuration of Jenkins :::
+				
+				https://www.jenkins.io/doc/book/installing/
+				https://www.jenkins.io/doc/book/installing/linux/
+				
+		
+		Jenkins - Service Package 	--> Its runs using default port: 8080
+		
+		- Install Pre-Requisites
+		
+		- Install Actual Package 
+		
+		- Perform Post Installation Activities
+		
+
+
+	Scenario1 :	Application Build and Release frequency is very less.
+	
+		Jenkins_Master (VM) 	
+				==> Create Jenkins CI/CD Pipeline Projects & Execute the Build in same Jenkins_Master Node.
+
+
+				
+	Scenario2 : Muliple Applications with high Build and Release frequencies.
+		
+		Jenkins_Master (VM)		- Install Jenkins 	
+				==> To Create Jenkins CI/CD Pipeline Projects and schedule to the builds in the slave_nodes
+																
+			Jenkins_SlaveNode1 (VM)	==> Perform Application Builds - Java Applications 		
+			
+
+Next :::
+
+	- Jenkins Global System Configuration 
+	- Plugins Management 
+	- Tools Management 
+	- User Management
+	- Security Management 
+	- Credentials Management 	
